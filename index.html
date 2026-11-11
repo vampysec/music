@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vampy Music · Reproductor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">VAMPY <span>MUSIC</span></div>
+  <p class="tagline">El Seis · Cumbias y Rap</p>
+</header>
+
+<main class="player">
+  <!-- Reproductor de YouTube (el video debe verse: es lo que suena) -->
+  <div class="video-wrap">
+    <div id="player"></div>
+  </div>
+
+  <section class="now-playing">
+    <img id="nowThumb" src="" alt="Portada" class="now-thumb">
+    <div class="now-info">
+      <div id="nowTitle" class="now-title">Elige una lista y dale a reproducir</div>
+      <div id="nowPlaylist" class="now-playlist">—</div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <button id="btnShuffle" class="btn shuffle" title="Modo aleatorio">🔀 Aleatorio</button>
+    <button id="btnPrev" class="btn round" title="Anterior">⏮</button>
+    <button id="btnPlay" class="btn round big" title="Reproducir / Pausa">▶</button>
+    <button id="btnNext" class="btn round" title="Siguiente">⏭</button>
+    <label class="vol">
+      🔊 <input id="volRange" type="range" min="0" max="100" value="80">
+    </label>
+  </section>
+
+  <section class="progress">
+    <span id="timeCurrent">0:00</span>
+    <input id="seekRange" type="range" min="0" max="100" value="0">
+    <span id="timeTotal">0:00</span>
+  </section>
+
+  <nav class="tabs" id="tabs"></nav>
+
+  <section class="queue">
+    <h2 id="queueTitle">Lista de reproducción</h2>
+    <ol id="trackList" class="track-list"></ol>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Reproduce listas de YouTube Music con la API oficial de YouTube.</p>
+  <p>VAMPY SECURITY — VSEC-MX © 2026</p>
+</footer>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="playlists.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
